@@ -23,7 +23,7 @@
 
 ###
 
-<img src="https://github.com/AlexRxPro/f5-xc-tf-app-firewall/blob/main/screenshots/screen001.png?raw=true"><br>
+<img src="https://github.com/acknowledge-team/F5XC-Industrialisation/tree/main/screenshots/screen001.png?raw=true"><br>
 
 
 <h2 align="left">Documentation </h2>
