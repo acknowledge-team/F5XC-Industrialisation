@@ -112,40 +112,6 @@ resource "volterra_origin_pool" "origin-pool" {
         medium_security  = var.f5xc_origin_pool_tls_medium_security
         low_security     = var.f5xc_origin_pool_tls_low_security
       }
-      no_mtls = var.f5xc_origin_pool_no_mtls
-
-      dynamic "use_mtls" {
-        for_each = var.f5xc_origin_pool_no_mtls == false ? [1] : []
-        content {
-          tls_certificates {
-            certificate_url = var.f5xc_origin_pool_mtls_certificate_url
-            description     = var.f5xc_origin_pool_mtls_certificate_description
-            custom_hash_algorithms {
-              hash_algorithms = var.f5xc_origin_pool_mtls_custom_hash_algorithms
-            }
-            private_key {
-              clear_secret_info {
-                url = var.f5xc_origin_pool_mtls_private_key_clear_secret_url
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  advanced_options {
-    disable_outlier_detection = var.f5xc_origin_pool_disable_outlier_detection
-
-    dynamic "outlier_detection" {
-      for_each = var.f5xc_origin_pool_outlier_detection
-      content {
-        base_ejection_time          = var.f5xc_origin_pool_outlier_detection.base_ejection_time
-        consecutive_5xx             = var.f5xc_origin_pool_outlier_detection.consecutive_5xx
-        consecutive_gateway_failure = var.f5xc_origin_pool_outlier_detection.consecutive_gateway_failure
-        interval                    = var.f5xc_origin_pool_outlier_detection.interval
-        max_ejection_percent        = var.f5xc_origin_pool_outlier_detection.max_ejection_percent
-      }
     }
   }
 }

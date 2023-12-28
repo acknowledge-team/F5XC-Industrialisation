@@ -47,21 +47,6 @@ variable "f5xc_origin_pool_no_tls" {
   default = true
 }
 
-variable "f5xc_origin_pool_no_mtls" {
-  type    = bool
-  default = false
-}
-
-variable "f5xc_origin_pool_mtls_certificate_url" {
-  type    = string
-  default = ""
-}
-
-variable "f5xc_origin_pool_mtls_private_key_clear_secret_url" {
-  type    = string
-  default = ""
-}
-
 variable "f5xc_origin_pool_tls_skip_server_verification" {
   type    = bool
   default = true
@@ -122,16 +107,6 @@ variable "f5xc_origin_pool_tls_disable_sni" {
   default = true
 }
 
-variable "f5xc_origin_pool_mtls_certificate_description" {
-  type    = string
-  default = ""
-}
-
-variable "f5xc_origin_pool_mtls_custom_hash_algorithms" {
-  type    = list(string)
-  default = []
-}
-
 variable "f5xc_origin_pool_same_as_endpoint_port" {
   type    = bool
   default = true
@@ -150,17 +125,6 @@ variable "f5xc_origin_pool_healthcheck_names" {
 variable "f5xc_origin_pool_disable_outlier_detection" {
   type    = bool
   default = false
-}
-
-variable "f5xc_origin_pool_outlier_detection" {
-  type = object({
-    interval                    = optional(number)
-    consecutive_5xx             = optional(number)
-    base_ejection_time          = optional(number)
-    max_ejection_percent        = optional(number)
-    consecutive_gateway_failure = optional(number)
-  })
-  default = {}
 }
 
 variable "f5xc_origin_pool_origin_servers" {
