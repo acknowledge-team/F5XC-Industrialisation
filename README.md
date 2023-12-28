@@ -5,7 +5,7 @@
 
 </p>
 
-<p align="left"> Projet : Créer un template de déploiement D'un WAF F5XC.</p>
+<p align="left"> Projet : Créer un template de déploiement d'un WAF F5XC.</p>
 
 ###
 
@@ -19,7 +19,7 @@
 
 <h2 align="left"> </h2>
 
-<p align="left">"Ici, la capture d'écran montre que dans Accueil/Administration/Gestion personnelle, nous devons créer notre jeton API ici. <br>À noter : il faut absolument un plan supérieur à gratuit pour pouvoir mettre en place un WAF. </p>
+<p align="left">Ici, la capture d'écran montre que dans Accueil/Administration/Gestion personnelle, nous devons créer notre jeton API. <br>À noter : il faut absolument un plan supérieur à gratuit pour pouvoir mettre en place un WAF. </p>
 
 ###
 

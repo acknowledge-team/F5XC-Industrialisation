@@ -101,48 +101,4 @@ resource "volterra_http_loadbalancer" "lb" {
       endpoint_subsets = default_route_pools.value.endpoint_subsets
     }
   }
-
-  /*dynamic "bot_defense" {
-    for_each = var.f5xc_http_lb_disable_bot_defense == false ? var.f5xc_http_lb_bot_defense : {}
-    content {
-      regional_endpoint = bot_defense.value.regional_endpoint
-      policy {
-        protected_app_endpoints {
-          metadata {
-            name        = bot_defense.value.policy.protected_app_endpoints.metadata.name
-            description = bot_defense.value.policy.protected_app_endpoints.metadata.description
-            disable     = bot_defense.value.policy.protected_app_endpoints.metadata.disable
-          }
-          http_methods = bot_defense.value.policy.protected_app_endpoints.http_methods
-          protocol     = bot_defense.value.policy.protected_app_endpoints.path.protocol
-          any_domain   = bot_defense.value.policy.protected_app_endpoints.path.any_domain
-          path {
-            prefix = bot_defense.value.policy.protected_app_endpoints.path.prefix
-          }
-          web    = bot_defense.value.policy.protected_app_endpoints.web
-          mobile = bot_defense.value.policy.protected_app_endpoints.mobile
-          web_mobile {
-            mobile_identifier = "HEADERS"
-          }
-          mitigation {
-            flag {
-              no_headers = bot_defense.value.policy.protected_app_endpoints.mitigation.flag.no_headers
-            }
-            none = bot_defense.value.policy.protected_app_endpoints.mitigation.none
-            block {
-              body      = bot_defense.value.policy.protected_app_endpoints.mitigation.block.body
-              status    = bot_defense.value.policy.protected_app_endpoints.mitigation.block.status
-              body_hash = bot_defense.value.policy.protected_app_endpoints.mitigation.block.body_hash
-            }
-          }
-        }
-        js_insert_all_pages {
-          javascript_location = bot_defense.value.policy.js_insert_all_pages
-        }
-        js_download_path   = bot_defense.value.policy.js_download_path
-        disable_mobile_sdk = bot_defense.value.policy.disable_mobile_sdk
-      }
-      timeout = bot_defense.value.timeout
-    }
-  }*/
 }
