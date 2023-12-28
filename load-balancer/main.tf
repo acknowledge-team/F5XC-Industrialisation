@@ -101,4 +101,9 @@ resource "volterra_http_loadbalancer" "lb" {
       endpoint_subsets = default_route_pools.value.endpoint_subsets
     }
   }
+//  dynamic "enable_ddos_detection" {
+//    content {
+//      enable_auto_mitigation = true
+//    }
+//  }
 }
